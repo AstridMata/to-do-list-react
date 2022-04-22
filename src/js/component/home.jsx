@@ -5,35 +5,57 @@ import rigoImage from "../../img/rigo-baby.jpg";
 
 //create your first component
 const Home = () => {
-	const [todolist, setTodolist] = useState([]);
-	const [newlist, setNewlist] = useState([]);
+	const [todo, setTodo] = useState([]);
+	const [listTodos, setListTodos] = useState([]);
+	const handleSumbit = (e) => {
+		e.preventDefault();
+		setTodo("");
+		setListTodos([...listTodos, { id: listTodos.length, name: todo }]);
+	};
 
-	// const list = (e) => {
-	// 	e.preventDefault();
-	// 	// 	//alert(`hay que hacer: ${todolist}`);
-	// };
-	const listatareas = [];
+	console.log(listTodos);
+	console.log(todo);
 
-	// const newtodo = () => {
-	// 	return listatareas.push({ todolist });
-	// };
-	console.log({ newlist });
-	// const lis = listatareas.map((item, index) => {
-	// 	return (
-	// 		<li key={index} className="list-group-item">
-	// 			{item}
-	// 		</li>
-	// 	);
-	// });
+	const deleteTodo = (id) => {
+		setListTodos(listTodos.filter((item) => item.id !== id));
+	};
 
 	return (
-		<div className="container">
-			<ul className="list-group">
-				<input onChange={(e) => setTodolist(e.target.value)}></input>
-				<button onClick={(e) => setNewlist(e.target.value)}>
-					Add Item
-				</button>
-			</ul>
+		<div className="fondo">
+			<div className="container todoframe">
+				<div>
+					<p className="title text-center">Todos</p>
+				</div>
+				<form onSubmit={handleSumbit} noValidate>
+					<div className="mb-3">
+						<label
+							htmlFor="exampleInputEmail1"
+							className="form-label">
+							Email address
+						</label>
+						<input
+							type="email"
+							className="form-control"
+							id="exampleInputEmail1"
+							aria-describedby="emailHelp"
+							onChange={(e) => setTodo(e.target.value)}
+							value={todo}></input>
+					</div>
+					<button type="submit" className="btn btn-primary">
+						Submit
+					</button>
+				</form>
+				<ul className="listOfTodos container">
+					{listTodos.map((item) => (
+						<li key={item.id}>
+							{item.name}
+							<i
+								className="bi bi-trash"
+								onClick={() => deleteTodo(item.id)}></i>
+						</li>
+					))}
+				</ul>
+			</div>
 		</div>
 	);
 };

@@ -10,3 +10,14 @@
     import 'relative/path/to/stylesheet.scss';
 
 */
+.fondo{
+    background-color: black;
+}
+
+.todoframe{
+    background-color: #F4F1F2;
+}
+
+.title{
+    text-decoration-color: #EBDADB;
+}
