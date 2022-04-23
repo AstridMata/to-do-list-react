@@ -28,6 +28,7 @@
     right: 0;
     overflow: auto;
     background-color: #F4F1F2;
+    width: 600px;
 }
 
 .title{
@@ -39,3 +40,15 @@
 .button {
     display: none;
 }
+
+
+.listOfTodos{
+    list-style-type: none;
+}
+
+/* .basurita{
+    display: none;
+}
+.todoName:hover + .basurita{
+  display: inline;
+} */
