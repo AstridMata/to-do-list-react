@@ -30,9 +30,7 @@ const Home = () => {
 					<div className="mb-3">
 						<label
 							htmlFor="exampleInputEmail1"
-							className="form-label">
-							Email address
-						</label>
+							className="form-label"></label>
 						<input
 							type="email"
 							className="form-control"
@@ -41,11 +39,11 @@ const Home = () => {
 							onChange={(e) => setTodo(e.target.value)}
 							value={todo}></input>
 					</div>
-					<button type="submit" className="btn btn-primary">
-						Submit
-					</button>
+					<button
+						type="submit"
+						className="button btn btn-primary"></button>
 				</form>
-				<ul className="listOfTodos container">
+				<ul className="container listOfTodos">
 					{listTodos.map((item) => (
 						<li key={item.id}>
 							{item.name}
