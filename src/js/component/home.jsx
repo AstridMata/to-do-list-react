@@ -1,9 +1,5 @@
 import React, { useEffect, useState } from "react";
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
-
-//create your first component
 const Home = () => {
 	const [todo, setTodo] = useState([]);
 	const [listTodos, setListTodos] = useState([]);
@@ -63,6 +59,4 @@ const Home = () => {
 
 export default Home;
 
-//https://www.digitalocean.com/community/tutorials/how-to-build-a-react-to-do-app-with-react-hooks
-//https://www.google.com/search?q=TodoMVC+App+with+React+hooks&rlz=1C1GCEA_enIE897IE897&oq=TodoMVC+App+with+React+hooks&aqs=chrome..69i57j69i60.203j0j7&sourceid=chrome&ie=UTF-8
-// https://reactjs.org/docs/hooks-state.html
+
